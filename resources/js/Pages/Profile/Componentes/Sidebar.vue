@@ -1,10 +1,11 @@
 <template>
     <aside
-          class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+          class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full  border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
           aria-label="Sidenav"
+          :class="{ 'bg-blue-500': isSidebarOpen }"
           id="drawer-navigation"
         >
-          <div class="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800">
+          <div class="overflow-y-auto py-5 px-3 h-full  dark:bg-gray-800">
             <form action="#" method="GET" class="md:hidden mb-2">
               <label for="sidebar-search" class="sr-only">Search</label>
               <div class="relative">
@@ -92,7 +93,7 @@
                 <ul id="dropdown-pages" class="hidden py-2 space-y-2">
                   <li>
                     <a
-                      href="#"
+                      :href="route('dashboard.deixarComentario')"
                       class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                       >Deixar Comentários</a
                     >
@@ -223,3 +224,8 @@
           </div>
         </aside>
 </template>
+
+<script setup>
+
+
+</script>

@@ -419,8 +419,8 @@
                     </svg>
                     <div class="text-sm text-gray-900 dark:text-white">Users</div>
                   </a>
-                  <a
-                    href="#"
+                  <Link
+                  :href="route('profile.edit')"
                     class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group"
                   >
                     <svg
@@ -439,7 +439,7 @@
                     <div class="text-sm text-gray-900 dark:text-white">
                       Profile
                     </div>
-                  </a>
+                  </Link>
                   <a
                     href="#"
                     class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group"
@@ -520,10 +520,10 @@
                   aria-labelledby="dropdown"
                 >
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      :href="route('profile.edit')"
                       class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                      >Meu Perfil</a
+                      >Meu Perfil</Link
                     >
                   </li>
                   <li>

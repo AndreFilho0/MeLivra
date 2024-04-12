@@ -30,9 +30,15 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//buscar Professor
 Route::get('/dashboard/buscarprofessor',function(){
     return Inertia::render('BuscarProfessor');
 })->middleware(['auth','verified'])->name('dashboard.buscarprofessor');
+
+//deixar comentario
+Route::get('/dashboard/deixarComentario',function(){
+    return Inertia::render('DeixarComentario');
+})->middleware(['auth','verified'])->name('dashboard.deixarComentario');
 
 
 
