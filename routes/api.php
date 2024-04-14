@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware(['auth'])->group(function (){
-    Route::post('/comentario',[ComentariosController::class,'AddComentarios'])->name('comentario');
+    Route::get('/comentario',[ComentariosController::class,'AddComentarios'])->name('comentario');
 });

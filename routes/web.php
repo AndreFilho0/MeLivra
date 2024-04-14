@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdmController;
+use App\Http\Controllers\BuscarProfessorController;
+use App\Http\Controllers\ComentariosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -31,14 +33,22 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 //buscar Professor
-Route::get('/dashboard/buscarprofessor',function(){
-    return Inertia::render('BuscarProfessor');
-})->middleware(['auth','verified'])->name('dashboard.buscarprofessor');
+Route::get('/dashboard/buscarprofessor',[BuscarProfessorController::class,'showFormBuscarProfessor'])->middleware(['auth','verified'])->name('dashboard.buscarprofessor');
 
-//deixar comentario
-Route::get('/dashboard/deixarComentario',function(){
-    return Inertia::render('DeixarComentario');
-})->middleware(['auth','verified'])->name('dashboard.deixarComentario');
+//compartilhar endpoints
+Route::get('/dashboard/deixarComentario',[ComentariosController::class,'showFormComentario'])
+->middleware(['auth','verified'])->name('dashboard.deixarComentario');
+
+Route::get('/dashboard/darnota',[ComentariosController::class,'showFormDarNota'])
+->middleware(['auth','verified'])->name('dashboard.darnota');
+
+Route::post('/dashboard/addComentario',[ComentariosController::class,'AddComentario'])
+->middleware(['auth','verified'])->name('dashboard.addComentario');
+Route::post('/dashboard/addNota',[ComentariosController::class,'AddNota'])
+->middleware(['auth','verified'])->name('dashboard.addNota');
+Route::get('/dashboard/procuraInfo',[BuscarProfessorController::class,'BucarInformacaoProfessor'])
+->middleware(['auth','verified'])->name('dashboard.procuraInfo');
+//END
 
 
 
@@ -59,5 +69,6 @@ Route::group(['prefix'=>'admin','middleware'=>'redirectAdmin'],function(){
 Route::middleware(['auth','admin'])->prefix('admin')->group(function (){
     Route::get('/dashboard',[AdmController::class,'index'])->name('admin.dashboard');
 });
+
 
 require __DIR__.'/auth.php';

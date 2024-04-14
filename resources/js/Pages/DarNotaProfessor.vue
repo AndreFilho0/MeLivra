@@ -4,31 +4,34 @@
 
         <section class="bg-white dark:bg-gray-900 p-10">
   <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-      <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Comentário</h2>
+      <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">avalie com uma nota seu professor (: </h2>
       <form @submit.prevent="addComentario()" class="flex justify-center flex-col">
-          <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-              
-            <div>
-                <label for="professor" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Professores</label>
-                <select v-model="nomeProfessor" id="professor" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                    <option v-for="prof in Prof" :value="prof.nomeProfessor">{{ prof.nomeProfessor }}</option>
-                    <!-- Substitua 'prof.id' pelo valor real que representa o identificador único do professor -->
-                </select>
-            </div>
+          <div class="grid gap-4  sm:gap-6">
+          
             <div>
                 <label for="instituto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Instituto do professor</label>
                 <select v-model="instituto" id="instituto" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     <option v-for="inst in Inst" :value="inst">{{ inst }}</option>
                     <!-- Certifique-se de que 'Inst' seja um array contendo os institutos -->
                 </select>  
+            </div>
+            <div>
+                <label for="professor" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Professor</label>
+                <select v-model="nomeProfessor" id="professor" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                    <option v-for="prof in Prof" :value="prof.nomeProfessor">{{ prof.nomeProfessor }}</option>
+                    <!-- Substitua 'prof.id' pelo valor real que representa o identificador único do professor -->
+                </select>
+            </div>
+            <div>
+                <label for="nota" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nota</label>
+                <select v-model="nota" id="nota" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                    <option v-for="i in 10" :value="i">{{ i }}</option>
+                </select>
             </div>  
-              <div class="sm:col-span-2">
-                  <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">comentario</label>
-                  <textarea v-model="comentario" id="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="seu comentário aqui"></textarea>
-              </div>
+              
           </div>
           <button type="submit" class="font-bold px-5 py-2.5 mt-4 sm:mt-6 text-sm  text-center text-black bg-blue-600 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-              Add comentário
+              Add Nota
           </button>
       </form>
       
@@ -95,7 +98,7 @@ let not = ref(false)
 //form para comentario
 const nomeProfessor = ref('')
 const instituto = ref('')
-const comentario = ref('')
+const nota = ref('')
 //end
 
 //metodo para adicionar comentario
@@ -103,10 +106,10 @@ const addComentario = async()=>{
     const formData = new FormData();
     formData.append('nomeProfessor',nomeProfessor.value);
     formData.append('instituto',instituto.value);
-    formData.append('comentario',comentario.value);
+    formData.append('nota',nota.value);
 
    try {
-    await router.post('/dashboard/addComentario',formData,{
+    await router.post('/dashboard/addNota',formData,{
         onSuccess: page => {
             not.value = true
             mensagemAgradecimento.value = '<div class="bg-green-400 text-center border-2 p-10 text-slate-900 from-neutral-950"><p>Obrigado por ajudar a comunidade!</p></div>';
