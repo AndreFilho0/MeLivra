@@ -27,7 +27,8 @@
           </div>
           <div class="flex justify-center">
           <button type="submit" class="font-bold px-5 py-2.5 mt-4 sm:mt-6 text-sm  text-center text-black bg-blue-600 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-              BUSCAR 
+              BUSCAR
+               
           </button>
           <div class="flex items-center">
               <MagnifyingGlassIcon class="h-8 w-8 mt-4 text-neutral-500" aria-hidden="true" />

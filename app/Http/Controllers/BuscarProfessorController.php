@@ -32,10 +32,20 @@ class BuscarProfessorController extends Controller{
         $buscarProfessor= new BuscarProfessores();
         $comentarios = $buscarProfessor->BuscarComentarios($dados['nomeProfessor'],$dados['instituto']);
         $notas = $buscarProfessor->BuscarNota($dados['nomeProfessor'],$dados['instituto']);
+        $ids = [];
+        foreach ($comentarios as $coment){
+            $id = $coment->criadoBY;
+            array_push($ids,$id);
+        }  
+         
+        $user = $buscarProfessor->BuscarUserQueFezComentarioPorID($ids);
 
         return Inertia::render('InfoDoProfessor',[
             'comentarios'=>$comentarios,
-            'notas'=>$notas
+            'notas'=>$notas,
+            'user'=>$user,
+            'nomeProfessor'=>$dados['nomeProfessor'],
+            'instituto'=>strtolower($dados['instituto'])
         ]);
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Helpers;
 
 use App\Models\Comentario;
 use App\Models\Professor;
+use App\Models\User;
 
 class BuscarProfessores{
 
@@ -21,6 +22,17 @@ class BuscarProfessores{
         return Professor::where('nomeProfessor',$nomeProfessor)
         ->where('instituto', $instituto)
         ->first();
+
+    }
+    public function BuscarUserQueFezComentarioPorID(array $ids){
+        $user =[ ];
+        foreach($ids as $id){
+          $usertem=  User::where('id',$id)->first();
+          array_push($user,$usertem);
+
+        }
+        
+      return $user;
 
     }
 }
