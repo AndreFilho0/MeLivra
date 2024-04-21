@@ -6,7 +6,9 @@ use App\Http\Controllers\ComentariosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
+use App\Http\Helpers\StorageS3;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +50,13 @@ Route::post('/dashboard/addNota',[ComentariosController::class,'AddNota'])
 ->middleware(['auth','verified'])->name('dashboard.addNota');
 Route::get('/dashboard/procuraInfo',[BuscarProfessorController::class,'BucarInformacaoProfessor'])
 ->middleware(['auth','verified'])->name('dashboard.procuraInfo');
+
+Route::get('/dashboard/teste',function (){
+    $s3 = new StorageS3();
+    $result = $s3->getUrl("YOVANI ADOLFO VILLANUEVA HERRERA2023_1_v.png");
+     return $result;
+})
+->middleware(['auth','verified'])->name('dashboard.teste');
 //END
 
 

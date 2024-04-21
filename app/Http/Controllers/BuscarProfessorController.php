@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Helpers\BuscarProfessores;
+use App\Http\Helpers\StorageS3;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Validator;
@@ -36,7 +37,12 @@ class BuscarProfessorController extends Controller{
         foreach ($comentarios as $coment){
             $id = $coment->criadoBY;
             array_push($ids,$id);
-        }  
+        }
+        $inst = strtolower($dados['instituto']);
+        $s3 = new StorageS3();
+        $file_url2022_2= $s3->getUrl($inst,$dados['nomeProfessor'],"2022_2_v.png");
+        $file_url2023_1= $s3->getUrl($inst,$dados['nomeProfessor'],"2023_1_v.png");
+
          
         $user = $buscarProfessor->BuscarUserQueFezComentarioPorID($ids);
 
@@ -45,7 +51,9 @@ class BuscarProfessorController extends Controller{
             'notas'=>$notas,
             'user'=>$user,
             'nomeProfessor'=>$dados['nomeProfessor'],
-            'instituto'=>strtolower($dados['instituto'])
+            'instituto'=>strtolower($dados['instituto']),
+            'file_url2022_2'=>$file_url2022_2,
+            'file_url2023_1'=>$file_url2023_1,
         ]);
 
 
