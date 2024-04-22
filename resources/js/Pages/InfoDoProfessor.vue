@@ -81,7 +81,6 @@
     <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
       <div v-for="p in profs" class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
         <div  class="shrink-0 max-w-md lg:max-w-lg mx-auto">
-          <div v-html="conteudoHtml"></div>
           <img class="w-full  dark:block" :src="p.fileUrl" alt="" />
 
         </div>
@@ -122,7 +121,7 @@ import AdminL from './Profile/Componentes/AdminL.vue'
 import { usePage,router,Link } from '@inertiajs/vue3';
 
 
-let conteudoHtml= '<img class="w-full  dark:block" src="./Profile/Componentes/images/turmas/ime/ABIEL COSTA MACEDO2022_2_v.png" alt="" />'
+
 
 
 //dados
