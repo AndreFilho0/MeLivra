@@ -47,7 +47,7 @@
     
 </template>
 <script setup>
-import {ref} from 'vue'
+import {ref , watch} from 'vue'
 import { Head } from '@inertiajs/vue3';
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
@@ -99,6 +99,7 @@ let not = ref(false)
 const nomeProfessor = ref('')
 const instituto = ref('')
 const nota = ref('')
+const ProfExp = ref([]);
 //end
 
 //metodo para adicionar comentario
@@ -123,6 +124,12 @@ const addComentario = async()=>{
    }
     
 }
+
+watch(instituto, (newValue, oldValue) => {
+    
+    ProfExp.value = Prof.filter(prof => prof.instituto == newValue);
+    
+});
 
 
 

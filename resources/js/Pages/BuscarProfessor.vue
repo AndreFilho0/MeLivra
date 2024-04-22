@@ -48,7 +48,7 @@
 
 <script setup>
 import { MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
-import {ref} from 'vue'
+import {ref , watch} from 'vue'
 import { Head } from '@inertiajs/vue3';
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
@@ -102,6 +102,7 @@ let not = ref(false)
 //form para comentario
 const nomeProfessor = ref('')
 const instituto = ref('')
+const ProfExp = ref([]);
 //end
 
 //metodo para adicionar comentario
@@ -117,6 +118,11 @@ const addComentario = async()=>{
    }
     
 }
+watch(instituto, (newValue, oldValue) => {
+    
+    ProfExp.value = Prof.filter(prof => prof.instituto == newValue);
+    
+});
 
 
 
