@@ -4,11 +4,13 @@ use App\Http\Controllers\AdmController;
 use App\Http\Controllers\BuscarProfessorController;
 use App\Http\Controllers\ComentariosController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubscribeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use App\Http\Helpers\StorageS3;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/home', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('home');
 
 //buscar Professor
 Route::get('/dashboard/buscarprofessor',[BuscarProfessorController::class,'showFormBuscarProfessor'])->middleware(['auth','verified'])->name('dashboard.buscarprofessor');
@@ -51,12 +56,13 @@ Route::post('/dashboard/addNota',[ComentariosController::class,'AddNota'])
 Route::get('/dashboard/procuraInfo',[BuscarProfessorController::class,'BucarInformacaoProfessor'])
 ->middleware(['auth','verified'])->name('dashboard.procuraInfo');
 
-Route::get('/dashboard/teste',function (){
-    $s3 = new StorageS3();
-    $result = $s3->getUrl("YOVANI ADOLFO VILLANUEVA HERRERA2023_1_v.png");
-     return $result;
-})
-->middleware(['auth','verified'])->name('dashboard.teste');
+
+//END
+
+//Rota de assinatura
+Route::get('/subscribe',[SubscribeController::class,'subscribeUser'])
+->middleware(['auth','verified'])->name('subscribe');
+
 //END
 
 
