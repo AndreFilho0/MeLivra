@@ -56,7 +56,6 @@ Route::post('/dashboard/addNota',[ComentariosController::class,'AddNota'])
 Route::get('/dashboard/procuraInfo',[BuscarProfessorController::class,'BucarInformacaoProfessor'])
 ->middleware(['auth','verified'])->name('dashboard.procuraInfo');
 
-
 //END
 
 //Rota de assinatura

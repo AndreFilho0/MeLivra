@@ -16,7 +16,9 @@ class AdmSeeder extends Seeder{
      'name'=>'adm',
      'email'=>'filhoandre534@gmail.com',
      'password'=>Hash::make('12345678'),
-     'isAdm'=>1
+     'isAdm'=>1,
+     'dataultimareq'=>'2024-04-26 15:30:00',
+     'QtsReq'=>0
     ]);
 
     Comentario::factory()->create(); 

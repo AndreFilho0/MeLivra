@@ -7,6 +7,12 @@ use App\Http\Helpers\StorageS3;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Helpers\Userprime;
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+
+use function Termwind\render;
 
 class BuscarProfessorController extends Controller{
 
@@ -29,6 +35,54 @@ class BuscarProfessorController extends Controller{
         if($validar->fails()){
          return "erro , corpo invalido";
         }
+
+        
+
+        $horaatual = Carbon::now()->subHours(3);
+         /** @var User $user */
+        $user = Auth()->user();
+        $dataDaUltimaReq =Carbon::parse($user->dataultimareq);
+        $difHoras = $dataDaUltimaReq->diffInHours($horaatual);
+
+        //ver se esse usuario e prime
+        $user_id=$user->id;
+        $userprime = new Userprime();
+       $isUserPrime = $userprime->verificaSeUserIsPrime($user_id);
+
+       if($user->QtsReq >5 && $isUserPrime == "active"){
+        $user->QtsReq = 0;
+        $user->dataultimareq = $horaatual;
+        $user->save();
+       }
+        
+        if($user->QtsReq >5 && ($isUserPrime == "userNuncaFoiPrime" || $isUserPrime == "canceled")){
+
+            return Inertia::render('UserSemAcesso',[
+                'difHoras'=>$difHoras,
+            ]);
+
+        }
+        if($user->QtsReq <=5 && ($isUserPrime == "userNuncaFoiPrime" || $isUserPrime == "canceled")){
+
+        $user->QtsReq += 1;
+        $user->dataultimareq = $horaatual;
+
+        $user->save();
+        }
+
+       
+
+        
+
+        if($difHoras>=24 && ($isUserPrime == "userNuncaFoiPrime" || $isUserPrime == "canceled")){
+            $user->QtsReq = 0;
+            $user->dataultimareq = $horaatual;
+            $user->save();
+        }
+
+        
+
+       
 
         $buscarProfessor= new BuscarProfessores();
         $comentarios = $buscarProfessor->BuscarComentarios($dados['nomeProfessor'],$dados['instituto']);

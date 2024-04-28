@@ -9,9 +9,14 @@ class SubscribeController extends Controller{
       
     /** @var User $user */
      $user = Auth()->user();
-     $user->createAsStripeCustomer();
-      
 
+     if($user->stripe_id){
+      return $user->newSubscription('default','price_1P9cr9RtWrjF1Ok8uRT7ojyB')
+     ->checkout()->redirect();
+
+     }
+     
+     $user->createAsStripeCustomer();
      return $user->newSubscription('default','price_1P9cr9RtWrjF1Ok8uRT7ojyB')
      ->checkout()->redirect();
       
