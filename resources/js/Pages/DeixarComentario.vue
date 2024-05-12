@@ -4,7 +4,7 @@
 
         <section class="bg-white dark:bg-gray-900 p-10">
   <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-      <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Comentário , preencha os instituto primeiro</h2>
+      <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add Comentário , preencha o instituto primeiro</h2>
       <form @submit.prevent="addComentario()" class="flex justify-center flex-col">
           <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
             <div>
@@ -24,7 +24,7 @@
             </div>
               
               <div class="sm:col-span-2">
-                  <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">comentario</label>
+                  <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">comentário</label>
                   <textarea v-model="comentario" id="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="seu comentário aqui"></textarea>
               </div>
           </div>

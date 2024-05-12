@@ -40,14 +40,14 @@ defineProps({
                 <Link
                     :href="route('login')"
                     class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                    >Log in</Link
+                    >Entrar</Link
                 >
 
                 <Link
                     v-if="canRegister"
                     :href="route('register')"
                     class="ms-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                    >Register</Link
+                    >Criar Conta</Link
                 >
             </template>
         </div>
@@ -71,32 +71,17 @@ defineProps({
               <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Bem vindo à nossa comunidade da UFG , feita para ajudar os alunos e compartilhar experiências</h1>
           </header>
           <p class="lead"></p>
-          <p>Before going digital, you might benefit from scribbling down some ideas in a sketchbook. This way,
-              you can think things through before committing to an actual design project.</p>
-          <p>But then I found a <a href="https://flowbite.com">component library based on Tailwind CSS called
-                  Flowbite</a>. It comes with the most commonly used UI components, such as buttons, navigation
-              bars, cards, form elements, and more which are conveniently built with the utility classes from
-              Tailwind CSS.</p>
-          <figure><img src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png" alt="">
-              <figcaption>Digital art by Anonymous</figcaption>
-          </figure>
-          <h2>Getting started with Flowbite</h2>
-          <p>First of all you need to understand how Flowbite works. This library is not another framework.
-              Rather, it is a set of components based on Tailwind CSS that you can just copy-paste from the
-              documentation.</p>
-          <p>It also includes a JavaScript file that enables interactive components, such as modals, dropdowns,
-              and datepickers which you can optionally include into your project via CDN or NPM.</p>
-          <p>You can check out the <a href="https://flowbite.com/docs/getting-started/quickstart/">quickstart
-                  guide</a> to explore the elements by including the CDN files into your project. But if you want
-              to build a project with Flowbite I recommend you to follow the build tools steps so that you can
-              purge and minify the generated CSS.</p>
-          <p>You'll also receive a lot of useful application UI, marketing UI, and e-commerce pages that can help
-              you get started with your projects even faster. You can check out this <a
-                  href="https://flowbite.com/docs/components/tables/">comparison table</a> to better understand
-              the differences between the open-source and pro version of Flowbite.</p>
-          <h2>When does design come in handy?</h2>
-          <p>While it might seem like extra work at a first glance, here are some key moments in which prototyping
-              will come in handy:</p>
+          <p>Novidades da versão 3 do Me Livra: </p>
+          <ul>
+            <li>-Informações das estatísticas de várias turmas dos professores:</li>
+          </ul>
+          <div class="m-4 rounded"><img class="rounded" src="images/estProf.jpeg" alt=""></div>
+          <ul>
+            <li>-Nova visualizações de notas para cada professor:</li>
+          </ul>
+          <div class="m-4"><img src="images/notas.jpeg" alt=""></div>
+         
+          
          
           
           

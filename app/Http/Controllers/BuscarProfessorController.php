@@ -19,7 +19,9 @@ class BuscarProfessorController extends Controller{
     public function showFormBuscarProfessor(Request $request){
         $buscarProfessor=new BuscarProfessores();
         $dados = $buscarProfessor->Buscar();
-        return Inertia::render('BuscarProfessor',["profs"=>$dados]);
+        return Inertia::render('BuscarProfessor',[
+        "profs"=>$dados ,'nomeUser'=>Auth()->user()->name,
+        'emailUser'=>Auth()->user()->email,]);
     }
 
 
@@ -108,6 +110,8 @@ class BuscarProfessorController extends Controller{
             'instituto'=>strtolower($dados['instituto']),
             'file_url2022_2'=>$file_url2022_2,
             'file_url2023_1'=>$file_url2023_1,
+            'nomeUser'=>Auth()->user()->name,
+            'emailUser'=>Auth()->user()->email,
         ]);
 
 

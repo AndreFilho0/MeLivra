@@ -49,13 +49,21 @@ class ComentariosController extends Controller{
     public function showFormComentario(){
         $buscarProfessor=new BuscarProfessores();
         $dados = $buscarProfessor->Buscar();
-        return Inertia::render('DeixarComentario',['profs'=>$dados]);
+        return Inertia::render('DeixarComentario',[
+            'profs'=>$dados ,
+            'nomeUser'=>Auth()->user()->name,
+            'emailUser'=>Auth()->user()->email,
+         ]);
 
     }
     public function showFormDarNota(){
         $buscarProfessor=new BuscarProfessores();
         $dados = $buscarProfessor->Buscar();
-        return Inertia::render('DarNotaProfessor',['profs'=>$dados]);
+        return Inertia::render('DarNotaProfessor',[
+            'profs'=>$dados,
+            'nomeUser'=>Auth()->user()->name,
+            'emailUser'=>Auth()->user()->email,
+        ]);
 
     }
 

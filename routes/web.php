@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use App\Http\Helpers\StorageS3;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +34,17 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard',[
+     'nomeUser'=>Auth()->user()->name,
+     'emailUser'=>Auth()->user()->email,
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/doacao', function () {
+    return Inertia::render('Doacao',[
+     'nomeUser'=>Auth()->user()->name,
+     'emailUser'=>Auth()->user()->email,
+    ]);
+})->middleware(['auth', 'verified'])->name('doacao');
 Route::get('/home', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('home');

@@ -123,231 +123,31 @@
                   >
                     <div class="flex-shrink-0">
                       <img
-                        class="w-11 h-11 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-                        alt="Bonnie Green avatar"
+                      
                       />
                       <div
                         class="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 rounded-full border border-white bg-primary-700 dark:border-gray-700"
                       >
-                        <svg
-                          aria-hidden="true"
-                          class="w-3 h-3 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"
-                          ></path>
-                          <path
-                            d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
-                          ></path>
-                        </svg>
+                        
                       </div>
                     </div>
                     <div class="pl-3 w-full">
                       <div
                         class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"
                       >
-                        New message from
+                        Bem vindo ao 
                         <span class="font-semibold text-gray-900 dark:text-white"
-                          >Bonnie Green</span
-                        >: "Hey, what's up? All set for the presentation?"
+                          >Me Livra</span
+                        >: espero que você goste daqui
                       </div>
                       <div
                         class="text-xs font-medium text-primary-600 dark:text-primary-500"
                       >
-                        a few moments ago
+                        a alguns segundos atrás
                       </div>
                     </div>
                   </a>
-                  <a
-                    href="#"
-                    class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600"
-                  >
-                    <div class="flex-shrink-0">
-                      <img
-                        class="w-11 h-11 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
-                        alt="Jese Leos avatar"
-                      />
-                      <div
-                        class="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-gray-900 rounded-full border border-white dark:border-gray-700"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="w-3 h-3 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="pl-3 w-full">
-                      <div
-                        class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"
-                      >
-                        <span class="font-semibold text-gray-900 dark:text-white"
-                          >Jese leos</span
-                        >
-                        and
-                        <span class="font-medium text-gray-900 dark:text-white"
-                          >5 others</span
-                        >
-                        started following you.
-                      </div>
-                      <div
-                        class="text-xs font-medium text-primary-600 dark:text-primary-500"
-                      >
-                        10 minutes ago
-                      </div>
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600"
-                  >
-                    <div class="flex-shrink-0">
-                      <img
-                        class="w-11 h-11 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
-                        alt="Joseph McFall avatar"
-                      />
-                      <div
-                        class="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-red-600 rounded-full border border-white dark:border-gray-700"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="w-3 h-3 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="pl-3 w-full">
-                      <div
-                        class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"
-                      >
-                        <span class="font-semibold text-gray-900 dark:text-white"
-                          >Joseph Mcfall</span
-                        >
-                        and
-                        <span class="font-medium text-gray-900 dark:text-white"
-                          >141 others</span
-                        >
-                        love your story. See it and view more stories.
-                      </div>
-                      <div
-                        class="text-xs font-medium text-primary-600 dark:text-primary-500"
-                      >
-                        44 minutes ago
-                      </div>
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600"
-                  >
-                    <div class="flex-shrink-0">
-                      <img
-                        class="w-11 h-11 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
-                        alt="Roberta Casas image"
-                      />
-                      <div
-                        class="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-green-400 rounded-full border border-white dark:border-gray-700"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="w-3 h-3 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="pl-3 w-full">
-                      <div
-                        class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"
-                      >
-                        <span class="font-semibold text-gray-900 dark:text-white"
-                          >Leslie Livingston</span
-                        >
-                        mentioned you in a comment:
-                        <span
-                          class="font-medium text-primary-600 dark:text-primary-500"
-                          >@bonnie.green</span
-                        >
-                        what do you say?
-                      </div>
-                      <div
-                        class="text-xs font-medium text-primary-600 dark:text-primary-500"
-                      >
-                        1 hour ago
-                      </div>
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="flex py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    <div class="flex-shrink-0">
-                      <img
-                        class="w-11 h-11 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
-                        alt="Robert image"
-                      />
-                      <div
-                        class="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-purple-500 rounded-full border border-white dark:border-gray-700"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="w-3 h-3 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="pl-3 w-full">
-                      <div
-                        class="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"
-                      >
-                        <span class="font-semibold text-gray-900 dark:text-white"
-                          >Robert Brown</span
-                        >
-                        posted a new video: Glassmorphism - learn how to implement
-                        the new design trend.
-                      </div>
-                      <div
-                        class="text-xs font-medium text-primary-600 dark:text-primary-500"
-                      >
-                        3 hours ago
-                      </div>
-                    </div>
-                  </a>
+                  
                 </div>
                 <a
                   href="#"
@@ -440,27 +240,7 @@
                       Profile
                     </div>
                   </Link>
-                  <a
-                    href="#"
-                    class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    <div class="text-sm text-gray-900 dark:text-white">
-                      Settings
-                    </div>
-                  </a>
+                  
                   <a
                     href="#"
                     class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group"
@@ -508,11 +288,11 @@
                 <div class="py-3 px-4">
                   <span
                     class="block text-sm font-semibold text-gray-900 dark:text-white"
-                    >Neil Sims</span
+                    >{{ NomeUser }}</span
                   >
                   <span
                     class="block text-sm text-gray-900 truncate dark:text-white"
-                    >name@flowbite.com</span
+                    >{{ EmailUser }}</span
                   >
                 </div>
                 <ul
@@ -540,7 +320,7 @@
                 >
                   <li>
                     <a
-                      href="#"
+                      :href="route('doacao')"
                       class="flex justify-between items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       <span class="flex items-center">
@@ -592,6 +372,10 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3';
+import { usePage,router } from '@inertiajs/vue3';
+
+let NomeUser = usePage().props.nomeUser;
+let EmailUser = usePage().props.emailUser;
 
 </script>

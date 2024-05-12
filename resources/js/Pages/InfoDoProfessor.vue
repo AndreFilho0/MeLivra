@@ -37,7 +37,7 @@
               
             </div>
           </dl>
-          <p class="font-bold text-center">Media = {{ NotaProfs.Nota/NotaProfs.QtsAvalicao }}</p>
+          <p class="font-bold text-center">Media = {{ (NotaProfs.Nota / NotaProfs.QtsAvalicao).toFixed(3)}}</p>
         </div>
         
 
@@ -66,6 +66,11 @@
             
             </div>
           </div>
+        </div>
+
+        <div class="mt-10">
+          <h3 class="text-lg font-medium text-gray-900">Deixe algum comentário para esse professor</h3>
+          <a :href="route('dashboard.deixarComentario')" class="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full">Adicioanar um comentário</a>
         </div>
         
       </div>
