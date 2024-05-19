@@ -57,13 +57,6 @@ class BuscarProfessorController extends Controller{
         $user->save();
        }
         
-        if($user->QtsReq >5 && ($isUserPrime == "userNuncaFoiPrime" || $isUserPrime == "canceled")){
-
-            return Inertia::render('UserSemAcesso',[
-                'difHoras'=>$difHoras,
-            ]);
-
-        }
         if($user->QtsReq <=5 && ($isUserPrime == "userNuncaFoiPrime" || $isUserPrime == "canceled")){
 
         $user->QtsReq += 1;
@@ -80,6 +73,14 @@ class BuscarProfessorController extends Controller{
             $user->QtsReq = 0;
             $user->dataultimareq = $horaatual;
             $user->save();
+        }
+
+        if($user->QtsReq >5 && ($isUserPrime == "userNuncaFoiPrime" || $isUserPrime == "canceled")){
+
+            return Inertia::render('UserSemAcesso',[
+                'difHoras'=>$difHoras,
+            ]);
+
         }
 
         

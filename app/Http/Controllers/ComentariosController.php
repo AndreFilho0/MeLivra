@@ -7,6 +7,7 @@ use App\Models\Comentario;
 use App\Models\Professor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Validator;
 
 use Inertia\Inertia;
@@ -15,6 +16,8 @@ class ComentariosController extends Controller{
 
     public function AddComentario(Request $request){
         $dados = $request->all();
+
+        
         $validar = Validator::make($request->all(),
 
         [
