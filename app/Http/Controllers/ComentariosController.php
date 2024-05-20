@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Helpers\BuscarProfessores;
+use App\Http\Helpers\Userprime;
 use App\Models\Comentario;
 use App\Models\Professor;
 use Illuminate\Http\Request;
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
 class ComentariosController extends Controller{
+
+    private $userPrime;
+
+    public function __construct()
+    {
+        $this->userPrime = new Userprime();
+    }
 
     public function AddComentario(Request $request){
         $dados = $request->all();
@@ -50,22 +58,34 @@ class ComentariosController extends Controller{
     }
 
     public function showFormComentario(){
+
         $buscarProfessor=new BuscarProfessores();
         $dados = $buscarProfessor->Buscar();
+
+        $idUser=Auth::user()->id;
+       $prime = $this->userPrime->userIsPrime($idUser);
+
+        
         return Inertia::render('DeixarComentario',[
             'profs'=>$dados ,
             'nomeUser'=>Auth()->user()->name,
             'emailUser'=>Auth()->user()->email,
+            'userPrime'=>$prime,
          ]);
 
     }
     public function showFormDarNota(){
+
         $buscarProfessor=new BuscarProfessores();
         $dados = $buscarProfessor->Buscar();
+        $idUser=Auth::user()->id;
+        
+       $prime = $this->userPrime->userIsPrime($idUser);
         return Inertia::render('DarNotaProfessor',[
             'profs'=>$dados,
             'nomeUser'=>Auth()->user()->name,
             'emailUser'=>Auth()->user()->email,
+            'userPrime'=>$prime,
         ]);
 
     }

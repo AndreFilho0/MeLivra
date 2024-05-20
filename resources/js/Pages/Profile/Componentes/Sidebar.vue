@@ -184,6 +184,17 @@
                   <span class="ml-3">Me Livra+</span>
                 </a>
               </li>
+              <li>
+                <a
+                  :href="route('subscribe')"
+                  class="flex items-center p-2 text-base font-medium text-blue-700 rounded-lg dark:text-blue-600 hover:text-yellow-200 hover:bg-blue-900 dark:hover:bg-blue-600 group"
+                >
+                <div class="w-7" >
+                <CurrencyDollarIcon />
+              </div>
+                  <span class="ml-3">Cancelar Me Livra+</span>
+                </a>
+              </li>
             </ul>
           </div>
           <div

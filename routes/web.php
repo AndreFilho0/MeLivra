@@ -10,8 +10,11 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use App\Http\Helpers\StorageS3;
+use App\Http\Helpers\Userprime;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,15 +37,28 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
+
+    $idUser=Auth::user()->id;
+    $userPrime = new Userprime();
+   $prime = $userPrime->userIsPrime($idUser);
+    
+   
     return Inertia::render('Dashboard',[
      'nomeUser'=>Auth()->user()->name,
      'emailUser'=>Auth()->user()->email,
+     'userPrime'=>$prime,
     ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/doacao', function () {
+
+    $idUser=Auth::user()->id;
+    $userPrime = new Userprime();
+   $prime = $userPrime->userIsPrime($idUser);
+
     return Inertia::render('Doacao',[
      'nomeUser'=>Auth()->user()->name,
      'emailUser'=>Auth()->user()->email,
+     'userPrime'=>$prime,
     ]);
 })->middleware(['auth', 'verified'])->name('doacao');
 Route::get('/home', function () {

@@ -24,5 +24,18 @@ use Illuminate\Support\Facades\DB;
 
     }
 
+    public function userIsPrime($user_id){
+    $subscribeActive=DB::table('subscriptions')->where('user_id','=',$user_id)->where('stripe_status','=','active')->first();
+    if($subscribeActive){
+        $prime = true;
+    }
+    else{
+        $prime = false;
+    }
+
+    return $prime;
+
+    }
+
 
  }

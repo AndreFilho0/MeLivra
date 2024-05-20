@@ -15,13 +15,27 @@ use Illuminate\Support\Facades\Auth;
 use function Termwind\render;
 
 class BuscarProfessorController extends Controller{
+    private $userPrime;
+
+    public function __construct()
+    {
+        $this->userPrime = new Userprime();
+    }
 
     public function showFormBuscarProfessor(Request $request){
+
         $buscarProfessor=new BuscarProfessores();
         $dados = $buscarProfessor->Buscar();
+
+        $idUser=Auth::user()->id;
+        $prime = $this->userPrime->userIsPrime($idUser);
+
         return Inertia::render('BuscarProfessor',[
         "profs"=>$dados ,'nomeUser'=>Auth()->user()->name,
-        'emailUser'=>Auth()->user()->email,]);
+        'emailUser'=>Auth()->user()->email,
+        'userPrime'=>$prime
+    
+    ]);
     }
 
 

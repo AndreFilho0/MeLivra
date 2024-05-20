@@ -41,9 +41,12 @@
                 <img
                   src="./images/sala-de-aula.png"
                   class="mr-3 h-8"
-                  alt="Flowbite Logo"
+                  alt=""
                 />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MeLivra</span>
+
+                <img v-if="userPrime" class="ml-2" src="./images/prime32.png" alt=""/>
+
               </Link>
               <form action="#" method="GET" class="hidden md:block md:pl-2">
                 <label for="topbar-search" class="sr-only">Search</label>
@@ -377,5 +380,6 @@ import { usePage,router } from '@inertiajs/vue3';
 
 let NomeUser = usePage().props.nomeUser;
 let EmailUser = usePage().props.emailUser;
+let userPrime = usePage().props.userPrime;
 
 </script>
