@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdmController;
+use App\Http\Controllers\BibliotecaDeAlexandriaController;
 use App\Http\Controllers\BuscarProfessorController;
 use App\Http\Controllers\ComentariosController;
 use App\Http\Controllers\ProfileController;
@@ -87,8 +88,15 @@ Route::get('/dashboard/procuraInfo',[BuscarProfessorController::class,'BucarInfo
 //Rota de assinatura
 Route::get('/subscribe',[SubscribeController::class,'subscribeUser'])
 ->middleware(['auth','verified'])->name('subscribe');
+Route::get('/unsubscribe',[SubscribeController::class,'unsubscribeUser'])
+->middleware(['auth','verified'])->name('unsubscribe');
 
 //END
+
+//Biblioteca de Alexandria
+
+Route::get('/dashboard/BibliotecaDeAlexandria', [BibliotecaDeAlexandriaController::class ,'index'])
+->middleware(['auth','verified'])->name('dashboard.BibliotecaDeAlexandria');
 
 
 

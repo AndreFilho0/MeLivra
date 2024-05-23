@@ -115,58 +115,15 @@
                 </ul>
               </li>
               <li>
-                <button
-                  type="button"
-                  class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  aria-controls="dropdown-authentication"
-                  data-collapse-toggle="dropdown-authentication"
+                <li>
+                <a
+                  :href="route('dashboard.BibliotecaDeAlexandria')"
+                  class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
-                 <div class="w-7">
-
-                  <BookOpenIcon />
-
-                 </div>
-
-                  <span class="flex-1 ml-3 text-left whitespace-nowrap"
-                    >Biblioteca de Alexandria</span
-                  >
-                  <svg
-                    aria-hidden="true"
-                    class="w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </button>
-                <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
-                  <li>
-                    <a
-                      href="#"
-                      class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      >Procurar Comentários</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      >Procurar notas</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      >Procurar Reclamações</a
-                    >
-                  </li>
-                </ul>
+                 <div class="w-5" ><BookOpenIcon></BookOpenIcon></div> 
+                  <span class="ml-3">Biblioteca de Alexandria</span>
+                </a>
+              </li>
               </li>
             </ul>
             <ul
@@ -186,8 +143,8 @@
               </li>
               <li>
                 <a
-                  :href="route('subscribe')"
-                  class="flex items-center p-2 text-base font-medium text-blue-700 rounded-lg dark:text-blue-600 hover:text-yellow-200 hover:bg-blue-900 dark:hover:bg-blue-600 group"
+                 :href="route('unsubscribe')"
+                  class="flex items-center p-2 text-base font-medium text-black rounded-lg dark:text-black hover:text-red-700  hover:bg-blue-900 dark:hover:bg-blue-600 group"
                 >
                 <div class="w-7" >
                 <CurrencyDollarIcon />
