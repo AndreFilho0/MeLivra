@@ -11,4 +11,13 @@ class BibliotecaDeAlexandriaController{
 
         return Inertia::render('BibliotecaAlexandria');
     }
+
+    public function instituto($instituto){
+
+        return Inertia::render('BibliotecaAlexandriaInst');
+
+        
+
+
+    }
 }

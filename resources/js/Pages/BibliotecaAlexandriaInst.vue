@@ -10,18 +10,16 @@
       </header>
 
     </div>
+
 <div class="flex justify-around items-center" >   
 <div class="grid grid-cols-10 gap-1 ">
   <div v-for="(inst, index) in Inst" :key="index"
-       class="w-13  flex flex-col items-center rounded-full transition-all duration-300 transform hover:w-17 hover:scale-110"
-       @click="() => enviarParaAPI(inst)">
-    <a class="flex flex-col justify-center items-center">
-      <img src="./Profile/Componentes/images/papiroV.png" alt="">
-      <span  class="font-mono font-bold transition-transform duration-300 hover:rotate-360">{{ inst }}</span>
-    </a>
+    class="w-13  flex flex-col items-center rounded-full transition-all duration-300 transform hover:w-17 hover:scale-110">
+    <a >a</a>
   </div>
 </div>
 </div>
+
   
 
 </template>

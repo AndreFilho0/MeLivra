@@ -98,6 +98,9 @@ Route::get('/unsubscribe',[SubscribeController::class,'unsubscribeUser'])
 Route::get('/dashboard/BibliotecaDeAlexandria', [BibliotecaDeAlexandriaController::class ,'index'])
 ->middleware(['auth','verified'])->name('dashboard.BibliotecaDeAlexandria');
 
+Route::get("/dashboard/BibliotecaDeAlexandria/{instituto}",[BibliotecaDeAlexandriaController::class,'instituto'])
+->middleware(['auth','verified'])->name('dashboard.BibliotecaDeAlexandria.inst');
+
 
 
 Route::middleware('auth')->group(function () {

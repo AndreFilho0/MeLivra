@@ -6,7 +6,7 @@
           id="drawer-navigation"
         >
           <div class="overflow-y-auto py-5 px-3 h-full  dark:bg-gray-800">
-            <form action="#" method="GET" class="md:hidden mb-2">
+            <form v-if="false" action="#" method="GET" class="md:hidden mb-2">
               <label for="sidebar-search" class="sr-only">Search</label>
               <div class="relative">
                 <div

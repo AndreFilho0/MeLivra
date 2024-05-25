@@ -48,7 +48,7 @@
                 <img v-if="userPrime" class="ml-2" src="./images/prime32.png" alt=""/>
 
               </Link>
-              <form action="#" method="GET" class="hidden md:block md:pl-2">
+              <form v-if="false" action="#" method="GET" class="hidden md:block md:pl-2">
                 <label for="topbar-search" class="sr-only">Search</label>
                 <div class="relative md:w-64 md:w-96">
                   <div
@@ -78,7 +78,7 @@
               </form>
             </div>
             <div class="flex items-center lg:order-2">
-              <button
+              <button v-if="false"
                 type="button"
                 data-drawer-toggle="drawer-navigation"
                 aria-controls="drawer-navigation"

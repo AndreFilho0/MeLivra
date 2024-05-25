@@ -35,4 +35,40 @@ class BuscarProfessores{
       return $user;
 
     }
+
+    public function searchInstitutosOnly(){
+         $Inst =[
+            "CEPAE",
+            "EA",
+            "EECA",
+            "EMC",
+            "EMAC",
+            "EVZ",
+            "FACE",
+            "FIC",
+            "FAFIL",
+            "FANUT",
+            "FAV",
+            "FCS",
+            "FD",
+            "FE",
+            "FEFD",
+            "FEN",
+            "FF",
+            "FH",
+            "FL",
+            "FM",
+            "FO",
+            "ICB",
+            "IESA",
+            "IF",
+            "IME",
+            "INF",
+            "IPTSP",
+            "IQ",
+            "FCT"
+        ];
+
+        return $Inst;
+    }
 }
