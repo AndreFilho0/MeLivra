@@ -30,9 +30,6 @@
               BUSCAR
                
           </button>
-          <div class="flex items-center">
-              <MagnifyingGlassIcon class="h-8 w-8 mt-4 text-neutral-500" aria-hidden="true" />
-          </div>
         </div>  
       </form>
       

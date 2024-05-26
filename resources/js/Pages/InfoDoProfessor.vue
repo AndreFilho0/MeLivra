@@ -6,15 +6,15 @@
 <div class="bg-white mt-20 flex justify-center md:-mr-60 p-6 ">
     <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-x-8 lg:py-32 lg:px-8">
       <div class="lg:col-span-4">
-        <h2 class="text-2xl font-bold tracking-tight text-gray-900">Notas dadas para:</h2>
-        <p class="text-center">{{ NotaProfs.nomeProfessor }}</p>
-        <p class="text-center">{{ NotaProfs.instituto }}</p>
+        <h2 class="text-2xl font-mono font-bold tracking-tight">Notas dadas para:</h2>
+        <p class="text-center font-mono font-bold">{{ NotaProfs.nomeProfessor }}</p>
+        <p class="text-center font-mono font-bold">{{ NotaProfs.instituto }}</p>
 
         <div class="mt-3 flex items-center">
           <div>
             
           </div>
-          <p class="ml-2 text-sm text-gray-900">Baseado em  {{ NotaProfs.QtsAvalicao }} Notas</p>
+          <p class="ml-2 text-sm font-mono font-bold">Baseado em  {{ NotaProfs.QtsAvalicao }} Notas</p>
         </div>
         
 
@@ -33,17 +33,17 @@
                   </div>
                 </div>
               </dt>
-              <dd class="ml-3 w-10 text-right text-sm tabular-nums text-gray-900">{{ Math.round((count.count / reviews.totalCount) * 100) }}%</dd>
+              <dd class="ml-3 w-10 text-right text-sm tabular-nums font-mono font-bold">{{ Math.round((count.count / reviews.totalCount) * 100) }}%</dd>
               
             </div>
           </dl>
-          <p class="font-bold text-center">Media = {{ (NotaProfs.Nota / NotaProfs.QtsAvalicao).toFixed(3)}}</p>
+          <p class="font-mono font-bold text-center">Media = {{ (NotaProfs.Nota / NotaProfs.QtsAvalicao).toFixed(3)}}</p>
         </div>
         
 
         <div class="mt-10">
-          <h3 class="text-lg font-medium text-gray-900">Deixe alguma nota para esse Professor </h3>
-          <a :href="route('dashboard.darnota')" class="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full">Adicioanr uma nota</a>
+          <h3 class="text-lg  font-mono font-bold">Deixe alguma nota para esse Professor(a) </h3>
+          <a :href="route('dashboard.darnota')" class="mt-6 font-mono inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full">Adicioanr uma nota</a>
         </div>
       </div>
       
@@ -69,8 +69,8 @@
         </div>
 
         <div class="mt-10">
-          <h3 class="text-lg font-medium text-gray-900">Deixe algum comentário para esse professor</h3>
-          <a :href="route('dashboard.deixarComentario')" class="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full">Adicioanar um comentário</a>
+          <h3 class="text-lg  font-mono font-bold">Deixe algum comentário para esse professor(a)</h3>
+          <a :href="route('dashboard.deixarComentario')" class="mt-6 font-mono  inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full">Adicioanar um comentário</a>
         </div>
         
       </div>
@@ -82,26 +82,16 @@
 
 
   
-  <section class="py-8 bg-white md:py-16 dark:bg-gray-900 antialiased ml-2">
+  <section v-if="fileurls" class="py-8 flex justify-center items-center bg-white md:py-16 dark:bg-gray-900 antialiased ml-2">
     <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
-      <div v-for="p in profs" class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+      <div class="flex justify-center" ><h2 class="font-mono font-bold">TURMAS ANTIGAS</h2></div>
+      <div v-for="url in fileurls" class="m-10">
         <div  class="shrink-0 max-w-md lg:max-w-lg mx-auto">
-          <img class="w-full  dark:block" :src="p.fileUrl" alt="" />
+          <img class="w-full  dark:block" :src="url" alt="" />
 
         </div>
 
-        <div class="mt-6 sm:mt-8 lg:mt-0">
-          <h1
-            class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white"
-          >
-         {{p.descricao}}
-          </h1>
-          <p class="mb-6 text-gray-500 dark:text-gray-400">
-            {{ p.colaboradores }}
-          </p>
-
-          
-        </div>
+        
       </div>
     </div>
   </section>
@@ -135,18 +125,14 @@ let NotaProfs = usePage().props.notas;
 let UserComentarios = usePage().props.user;
 let nomeProfessor = usePage().props.nomeProfessor;
 let instuto = usePage().props.instituto;
-let fileurl2022_2 = usePage().props.file_url2022_2;
-let fileurl2023_1 = usePage().props.file_url2023_1;
+let fileurls = usePage().props.file_urls;
+
 console.log(instuto)
 console.log(nomeProfessor);
 
-let profs = ref([
-  {fileUrl:fileurl2022_2 , descricao:"turma do semestre 2022.2 do professor "+nomeProfessor , colaboradores:"essa imagem foi enviada pela comunidade, ajude a comunidade crescer compartilhando uma turma também "},
-  {fileUrl:fileurl2023_1,descricao:"turma do semestre 2023.1 do professor "+nomeProfessor , colaboradores:"essa imagem foi enviada pela comunidade, ajude a comunidade crescer compartilhando uma turma também "},
 
-])
 
-const aaa=profs.value[0].src
+
 
 
 import { StarIcon , BookOpenIcon ,UserIcon } from '@heroicons/vue/20/solid'

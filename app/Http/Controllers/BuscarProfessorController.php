@@ -111,10 +111,11 @@ class BuscarProfessorController extends Controller{
         }
         $inst = strtolower($dados['instituto']);
         $s3 = new StorageS3();
-        $file_url2022_2= $s3->getUrl($inst,$dados['nomeProfessor'],"2022_2_v.png");
-        $file_url2023_1= $s3->getUrl($inst,$dados['nomeProfessor'],"2023_1_v.png");
+        $file_urls= $s3->getUrl($inst,$dados['nomeProfessor'],"2022_2_v.png");
 
-         
+        
+        $prime = $this->userPrime->userIsPrime($user_id);
+
         $user = $buscarProfessor->BuscarUserQueFezComentarioPorID($ids);
 
         return Inertia::render('InfoDoProfessor',[
@@ -123,10 +124,10 @@ class BuscarProfessorController extends Controller{
             'user'=>$user,
             'nomeProfessor'=>$dados['nomeProfessor'],
             'instituto'=>strtolower($dados['instituto']),
-            'file_url2022_2'=>$file_url2022_2,
-            'file_url2023_1'=>$file_url2023_1,
+            'file_urls'=>$file_urls,
             'nomeUser'=>Auth()->user()->name,
             'emailUser'=>Auth()->user()->email,
+            'userPrime'=>$prime,
         ]);
 
 
