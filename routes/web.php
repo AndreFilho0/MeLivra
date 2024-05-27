@@ -94,12 +94,12 @@ Route::get('/unsubscribe',[SubscribeController::class,'unsubscribeUser'])
 //END
 
 //Biblioteca de Alexandria
-
 Route::get('/dashboard/BibliotecaDeAlexandria', [BibliotecaDeAlexandriaController::class ,'index'])
 ->middleware(['auth','verified'])->name('dashboard.BibliotecaDeAlexandria');
 
 Route::get("/dashboard/BibliotecaDeAlexandria/{instituto}",[BibliotecaDeAlexandriaController::class,'instituto'])
 ->middleware(['auth','verified'])->name('dashboard.BibliotecaDeAlexandria.inst');
+//END
 
 
 

@@ -206,6 +206,7 @@
                 </div>
                 <div class="grid grid-cols-3 gap-4 p-4">
                   <a
+                    v-if="false" 
                     href="#"
                     class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group"
                   >

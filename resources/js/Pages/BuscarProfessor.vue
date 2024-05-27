@@ -3,10 +3,10 @@
     
     <AdminL>
       
-              <section class="bg-white dark:bg-gray-900 p-10">
+<section class="bg-white dark:bg-gray-900 p-10">
   <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
       <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">veja todas as informações de um professor </h2>
-      <form @submit.prevent="addComentario()" class="flex justify-center flex-col">
+      <form @submit.prevent="BuscarProfessor()" class="flex justify-center flex-col">
           <div class="grid gap-4  sm:gap-6">
           
             <div>
@@ -32,10 +32,16 @@
           </button>
         </div>  
       </form>
+
+
+      <div v-if="loud" class="flex justify-center items-center flex-col">
+        <img class="w-24 mt-10" src="./Profile/Componentes/images/macaco.gif" alt="">
+        <p class="font-serif font-semibold">carregando.....</p>
+      </div>
       
      
   </div>
-        </section>
+</section>
           
 
         
@@ -56,6 +62,7 @@ import { usePage,router,Link } from '@inertiajs/vue3';
 const Prof = usePage().props.profs;
 let ComentariosProfs = usePage().props.comentario;
 let NotaProfs = usePage().props.nota; 
+let loud = ref(false);
 
 
 //mensagem de add comentario sucesso
@@ -103,7 +110,9 @@ const ProfExp = ref([]);
 //end
 
 //metodo para adicionar comentario
-const addComentario = async()=>{
+const BuscarProfessor = async()=>{
+
+    loud.value = true;
     
 
    try {
