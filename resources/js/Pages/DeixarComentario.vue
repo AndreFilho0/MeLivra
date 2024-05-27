@@ -11,7 +11,7 @@
                 <label for="instituto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Instituto do professor</label>
                 <select v-model="instituto" id="instituto" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     <option v-for="inst in Inst" :value="inst">{{ inst }}</option>
-                    <!-- Certifique-se de que 'Inst' seja um array contendo os institutos -->
+                    
                 </select>  
             </div>
               
@@ -19,7 +19,7 @@
                 <label for="professor" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Professores</label>
                 <select v-model="nomeProfessor" id="professor" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     <option v-for="prof in ProfExp" :value="prof.nomeProfessor">{{ prof.nomeProfessor }}</option>
-                    <!-- Substitua 'prof.id' pelo valor real que representa o identificador único do professor -->
+                   
                 </select>
             </div>
               

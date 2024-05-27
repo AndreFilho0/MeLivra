@@ -5,6 +5,7 @@ use App\Http\Controllers\BibliotecaDeAlexandriaController;
 use App\Http\Controllers\BuscarProfessorController;
 use App\Http\Controllers\ComentariosController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReclamacaoController;
 use App\Http\Controllers\SubscribeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -78,10 +79,18 @@ Route::get('/dashboard/darnota',[ComentariosController::class,'showFormDarNota']
 
 Route::post('/dashboard/addComentario',[ComentariosController::class,'AddComentario'])
 ->middleware(['auth','verified'])->name('dashboard.addComentario');
+
 Route::post('/dashboard/addNota',[ComentariosController::class,'AddNota'])
 ->middleware(['auth','verified'])->name('dashboard.addNota');
+
 Route::get('/dashboard/procuraInfo',[BuscarProfessorController::class,'BucarInformacaoProfessor'])
 ->middleware(['auth','verified'])->name('dashboard.procuraInfo');
+
+Route::get('/dashboard/reclamacao',[ReclamacaoController::class,'index'])
+->middleware(['auth','verified'])->name('dashboard.reclamacao');
+Route::post('/dashboard/reclamacao/add',[ReclamacaoController::class,'addReclamacao'])
+->middleware(['auth','verified'])->name('dashboard.addR');
+
 
 //END
 
