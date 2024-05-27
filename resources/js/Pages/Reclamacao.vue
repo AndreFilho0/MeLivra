@@ -48,10 +48,8 @@ let mensagemAgradecimento = ref('')
 
 let not = ref(false)
 
-//form para comentario
-const instituto = ref('')
+//form para reclamação
 const reclamacao = ref('')
-const ProfExp = ref([]);
 //end
 
 
@@ -76,11 +74,7 @@ const addReclamacao = async()=>{
     
 }
 
-watch(instituto, (newValue, oldValue) => {
-    
-    ProfExp.value = Prof.filter(prof => prof.instituto == newValue);
-    
-});
+
 
 
 
