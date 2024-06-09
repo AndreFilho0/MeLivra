@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->date('dataultimareq');
-            $table->string('QtsReq');
+            $table->date('dataultimareq')->nullable();
+            $table->string('QtsReq')->default('0');
             $table->boolean('isAdm')->default(0);
             $table->rememberToken();
             $table->timestamps();

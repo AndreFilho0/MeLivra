@@ -96,14 +96,21 @@ class StorageS3 {
         $files = Storage::disk('s3')->files($directory);
         $filesJSON = json_encode($files);
 
+        $matchedFiles = [];
         foreach ($files as $file) {
             //verifica se o nome do arquivo existe para depois colocar se existe dentro do array
             if (strpos($file, $nomeArquivo) !== false) {
                 
-                $matchedFiles[] = $file;
+                $matchedFiles [] = $file;
             }
         }
             $urls = [];
+
+            
+            if(!$matchedFiles){
+                return [];
+
+            }
             foreach($matchedFiles as $file){
             $url = Storage::disk('s3')->temporaryUrl(
                 $file,
