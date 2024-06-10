@@ -39,13 +39,13 @@ const updatePassword = () => {
             <h2 class="text-lg font-medium text-gray-900">Atualizar Senha</h2>
 
             <p class="mt-1 text-sm text-gray-600">
-                coloque uma senha longa e aleatório
+                coloque uma senha longa e forte
             </p>
         </header>
 
         <form @submit.prevent="updatePassword" class="mt-6 space-y-6">
             <div>
-                <InputLabel for="current_password" value="Current Password" />
+                <InputLabel for="current_password" value="Senha atual" />
 
                 <TextInput
                     id="current_password"
@@ -60,7 +60,7 @@ const updatePassword = () => {
             </div>
 
             <div>
-                <InputLabel for="password" value="New Password" />
+                <InputLabel for="password" value="Nova senha" />
 
                 <TextInput
                     id="password"
@@ -75,7 +75,7 @@ const updatePassword = () => {
             </div>
 
             <div>
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+                <InputLabel for="password_confirmation" value="Confirmar senha" />
 
                 <TextInput
                     id="password_confirmation"

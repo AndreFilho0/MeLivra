@@ -73,7 +73,7 @@ const form = useForm({
                         as="button"
                         class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
-                        Click here to re-send the verification email.
+                       Clique aqui para enviar de novo o email de verificação 
                     </Link>
                 </p>
 
@@ -81,7 +81,7 @@ const form = useForm({
                     v-show="status === 'verification-link-sent'"
                     class="mt-2 font-medium text-sm text-green-600"
                 >
-                    A new verification link has been sent to your email address.
+                    Um novo email de verificação já foi enviado para você
                 </div>
             </div>
 
