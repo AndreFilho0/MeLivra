@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Auth;
+namespace Tests\Feature\Subscribe;
 
 use App\Http\Controllers\SubscribeController;
 use App\Models\User;
