@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import { Head, Link } from '@inertiajs/vue3';
+import Github from './Profile/Componentes/Github.vue'
+
 
 const version = ref('3.00.0');
 
@@ -52,6 +54,10 @@ defineProps({
             </template>
         </div>
 
+        <Github>
+
+        </Github>
+
 
 
 <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 border-y-indigo-200  antialiased">
@@ -64,8 +70,8 @@ defineProps({
                       <div>
                           <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Me Livra</a>
                           <p class="text-base text-gray-500 dark:text-gray-400">{{ version }}</p>
-
                       </div>
+                      
                   </div>
               </address>
               <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Bem vindo à nossa comunidade da UFG , feita para ajudar os alunos e compartilhar experiências</h1>
