@@ -88,6 +88,7 @@
       <div v-for="url in fileurls" class="m-10">
         <div  class="shrink-0 max-w-md lg:max-w-lg mx-auto">
           <img class="w-full  dark:block" :src="url" alt="" />
+          
 
         </div>
 

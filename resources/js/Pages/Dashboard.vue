@@ -4,8 +4,9 @@ import { Head } from '@inertiajs/vue3';
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 import AdminL from './Profile/Componentes/AdminL.vue'
+import Github from './Profile/Componentes/Github.vue';
 
-// initialize components based on data attribute selectors
+
 onMounted(() => {
     initFlowbite();
 })
@@ -18,4 +19,8 @@ onMounted(() => {
     <AdminL>
     
    </AdminL>
+   
+   <Github >
+    
+   </Github>
 </template>
