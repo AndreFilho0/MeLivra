@@ -2,7 +2,28 @@
 import { ref } from 'vue'
 import { Head, Link } from '@inertiajs/vue3';
 import Github from './Profile/Componentes/Github.vue'
+import { CheckIcon, HandThumbUpIcon, UserIcon } from '@heroicons/vue/20/solid'
 
+const timeline = [
+  {
+    id: 1,
+    content: 'Informações',
+    target: 'das estatísticas de várias turmas dos professores:',
+    href: '#',
+    imageUrl: "images/estProf.jpeg",
+    icon: CheckIcon,
+    iconBackground: 'bg-green-500',
+  },
+  {
+    id: 2,
+    content: 'Nova visualizações',
+    target: 'de notas para cada professor:',
+    href: '#',
+    imageUrl: "images/notas.jpeg",
+    icon: CheckIcon,
+    iconBackground: 'bg-green-500',
+  },
+]
 
 const version = ref('3.00.0');
 
@@ -77,15 +98,32 @@ defineProps({
               <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Bem vindo à nossa comunidade da UFG , feita para ajudar os alunos e compartilhar experiências</h1>
           </header>
           <p class="lead"></p>
-          <p>Novidades da versão 3 do Me Livra: </p>
-          <ul>
-            <li>-Informações das estatísticas de várias turmas dos professores:</li>
-          </ul>
-          <div class="m-4 rounded"><img class="rounded" src="images/estProf.jpeg" alt=""></div>
-          <ul>
-            <li>-Nova visualizações de notas para cada professor:</li>
-          </ul>
-          <div class="m-4"><img src="images/notas.jpeg" alt=""></div>
+          <p class="font-mono font-bold">Novidades da versão 3 do Me Livra: </p>
+                   
+            <div class="flow-root mt-4">
+                <ul role="list" class="-mb-8">
+                <li v-for="(event, eventIdx) in timeline" :key="event.id">
+                    <div class="relative pb-8">
+                    <span v-if="eventIdx !== timeline.length - 1" class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
+                    <div class="relative flex space-x-3">
+                        <div>
+                        <span :class="[event.iconBackground, 'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white']">
+                            <component :is="event.icon" class="h-5 w-5 text-white" aria-hidden="true" />
+                        </span>
+                        </div>
+                        <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                        <div>
+                            <p class="text-sm text-gray-500">
+                            {{ event.content }} <a class="font-medium text-gray-900">{{ event.target }}</a>
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="m-4 rounded"><img class="rounded" :src="event.imageUrl" alt=""></div>
+                </li>
+                </ul>
+            </div>
          
           
          
