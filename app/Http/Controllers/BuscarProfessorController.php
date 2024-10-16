@@ -117,7 +117,7 @@ class BuscarProfessorController extends Controller
         }
         $inst = strtolower($dados['instituto']);
         $s3 = new StorageS3();
-        $file_urls = ""; //$s3->getUrl($inst,$dados['nomeProfessor'],"2022_2_v.png");
+        $file_urls =$s3->getUrl($inst,$dados['nomeProfessor'],"2022_2_v.png"); 
 
 
         $prime = $this->userPrime->userIsPrime($user_id);
