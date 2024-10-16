@@ -60,6 +60,12 @@ Se você precisar popular o banco de dados com dados iniciais, rode as seeds , a
 docker-compose exec app php artisan db:seed
 ```
 
+Para rodar as seed da parte dos professores
+
+```
+docker-compose exec app php artisan db:seed --class=ProfessorsTableSeeder
+```
+
 # Instalando as dependências do Node.js
 Agora, você precisará instalar as dependências do Node.js:
 
@@ -68,5 +74,10 @@ npm install
 npm run dev
 ```
 
+# Setup.sh
+Você pode também executar o arquivo setup.sh para realizar a configuração automatizada
 
+```
+bash setup.sh
+```
 

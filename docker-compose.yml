@@ -24,7 +24,7 @@ services:
     volumes:
       - redis-data:/data
     networks:
-      - melivra    
+      - melivra
 
   nginx:
     image: nginx:alpine
@@ -65,6 +65,7 @@ services:
 
 networks:
   melivra:
+
 
 volumes:
   db_data:
