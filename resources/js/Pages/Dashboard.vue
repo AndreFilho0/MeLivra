@@ -16,6 +16,7 @@ onMounted(() => {
 
 <template>
     <Head title="Me Livra Dashboard" />
+    <meta name="google-adsense-account" content="ca-pub-1380981380586696">
 
     
     <AdminL>
