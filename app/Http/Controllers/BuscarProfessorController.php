@@ -11,6 +11,7 @@ use App\Http\Helpers\Userprime;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Comentario;
 
 use function Termwind\render;
 
@@ -95,8 +96,8 @@ class BuscarProfessorController extends Controller
             $user->save();
         }
 
-        //TODO: Não se esqueca de voltar para 5
-        if ($user->QtsReq > 5000 && ($isUserPrime == "userNuncaFoiPrime" || $isUserPrime == "canceled")) {
+        
+        if ($user->QtsReq > 5 && ($isUserPrime == "userNuncaFoiPrime" || $isUserPrime == "canceled")) {
 
             return Inertia::render('UserSemAcesso', [
                 'difHoras' => $difHoras,
@@ -118,8 +119,8 @@ class BuscarProfessorController extends Controller
         }
         $inst = strtolower($dados['instituto']);
         $s3 = new StorageS3();
-        //TODO: Desfazer isso aq tambem
-        $file_urls = ""; //$s3->getUrl($inst,$dados['nomeProfessor'],"2022_2_v.png");
+        
+        $file_urls = $s3->getUrl($inst,$dados['nomeProfessor'],"2022_2_v.png");
 
 
         $prime = $this->userPrime->userIsPrime($user_id);
@@ -146,10 +147,13 @@ class BuscarProfessorController extends Controller
     {
         $buscarProfessor = new BuscarProfessores();
         $professor = $buscarProfessor->BuscarMaiorNota();
-        // dd($professor);
+        
+
+        $ultimoComent = Comentario::where('puplicavel', true)->latest('created_at')->first();
 
         return Inertia::render('Dashboard', [
             'professor' => $professor,
+            'comentario' => $ultimoComent,
         ]);
     }
 }
