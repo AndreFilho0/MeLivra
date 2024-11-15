@@ -86,6 +86,9 @@ Route::post('/dashboard/addNota',[ComentariosController::class,'AddNota'])
 Route::get('/dashboard/procuraInfo',[BuscarProfessorController::class,'BucarInformacaoProfessor'])
 ->middleware(['auth','verified'])->name('dashboard.procuraInfo');
 
+Route::get('/dashboard',[BuscarProfessorController::class,'BuscarMaiorNota'])
+->middleware(['auth','verified'])->name('dashboard');
+
 Route::get('/dashboard/reclamacao',[ReclamacaoController::class,'index'])
 ->middleware(['auth','verified'])->name('dashboard.reclamacao');
 Route::post('/dashboard/reclamacao/add',[ReclamacaoController::class,'addReclamacao'])

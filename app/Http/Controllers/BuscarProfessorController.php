@@ -95,7 +95,8 @@ class BuscarProfessorController extends Controller
             $user->save();
         }
 
-        if ($user->QtsReq > 5 && ($isUserPrime == "userNuncaFoiPrime" || $isUserPrime == "canceled")) {
+        //TODO: Não se esqueca de voltar para 5
+        if ($user->QtsReq > 5000 && ($isUserPrime == "userNuncaFoiPrime" || $isUserPrime == "canceled")) {
 
             return Inertia::render('UserSemAcesso', [
                 'difHoras' => $difHoras,
@@ -117,6 +118,7 @@ class BuscarProfessorController extends Controller
         }
         $inst = strtolower($dados['instituto']);
         $s3 = new StorageS3();
+        //TODO: Desfazer isso aq tambem
         $file_urls = ""; //$s3->getUrl($inst,$dados['nomeProfessor'],"2022_2_v.png");
 
 
@@ -138,5 +140,16 @@ class BuscarProfessorController extends Controller
 
 
 
+    }
+
+    public function BuscarMaiorNota(Request $request)
+    {
+        $buscarProfessor = new BuscarProfessores();
+        $professor = $buscarProfessor->BuscarMaiorNota();
+        // dd($professor);
+
+        return Inertia::render('Dashboard', [
+            'professor' => $professor,
+        ]);
     }
 }

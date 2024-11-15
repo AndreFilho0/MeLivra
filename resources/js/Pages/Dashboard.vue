@@ -5,9 +5,8 @@ import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 import AdminL from './Profile/Componentes/AdminL.vue'
 import Github from './Profile/Componentes/Github.vue';
-
-
-
+import { usePage } from '@inertiajs/vue3';
+import ProfMaisBemAvaliado  from './ProfMaisBemAvaliado.vue';
 
 onMounted(() => {
     initFlowbite();
@@ -82,6 +81,9 @@ onMounted(() => {
       </a>
       
     </div>
+
+    <ProfMaisBemAvaliado />
+    
   </div>
 </section>
    

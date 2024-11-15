@@ -24,6 +24,10 @@ class BuscarProfessores{
         ->first();
 
     }
+    public function BuscarMaiorNota(){
+        return Professor::orderBy('Nota', 'desc')->first();
+
+    }
     public function BuscarUserQueFezComentarioPorID(array $ids){
         $user =[ ];
         foreach($ids as $id){
