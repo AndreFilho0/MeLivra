@@ -11,9 +11,9 @@
         shadow-xl
         border-gray-300 
         bg-gray-100">
-      <h2 class="text-center text-2xl font-medium text-gray-900 dark:text-white">Professor melhor avaliado</h2>
-      <p class="text-center">
-        {{ professor.nomeProfessor }} é um professor legal.
+      <h2 class="text-center text-xl font-bold text-black dark:text-white">Melhores professores</h2>
+      <p v-for="(prof, index) in professor" :key="index" class="text-justify pl-3">
+        {{ index + 1 }}. {{ prof.nomeProfessor }} do {{ prof.instituto }} com {{ prof.Nota }}
       </p>
     </div>
 
@@ -27,7 +27,9 @@
         shadow-xl
         border-gray-300 
         bg-gray-100">
-      <h2 class="text-center text-2xl font-medium text-gray-900 dark:text-white">Último comentário</h2>
+      <h2 class="text-center text-xl font-bold text-black dark:text-white">
+        Último comentário foi de {{ user.name }} 
+      </h2>
       <p class="text-center">
         "{{ comentario.comentario }}" ao prof {{ comentario.nomeProfessor }} do {{ comentario.instProfessor }}
       </p>
@@ -40,11 +42,11 @@ import { usePage } from '@inertiajs/vue3';
 import { ref, onMounted } from 'vue';
 const professor = ref({});
 const comentario = ref({});
+const user = ref({});
 
 onMounted(() => {
   professor.value = usePage().props.professor || {};
   comentario.value = usePage().props.comentario || {};
-  console.log(professor);
-  console.log(comentario);
+  user.value = usePage().props.user || {};
 });
 </script>

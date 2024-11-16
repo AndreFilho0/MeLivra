@@ -146,14 +146,16 @@ class BuscarProfessorController extends Controller
     public function BuscarMaiorNota(Request $request)
     {
         $buscarProfessor = new BuscarProfessores();
-        $professor = $buscarProfessor->BuscarMaiorNota();
-        
-
         $ultimoComent = Comentario::where('puplicavel', true)->latest('created_at')->first();
+        $professor = $buscarProfessor->BuscarMaiorNota();
+        $user = $ultimoComent 
+            ? $buscarProfessor->BuscarUserQueFezComentarioPorID([$ultimoComent->criadoBY])
+            : null;
 
         return Inertia::render('Dashboard', [
             'professor' => $professor,
             'comentario' => $ultimoComent,
+            'user' => $user[0],
         ]);
     }
 }
