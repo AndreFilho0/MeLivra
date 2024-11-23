@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Helpers\BuscarProfessores;
+use App\Services\BuscarProfessores;
 use App\Http\Helpers\StorageS3;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -143,19 +143,27 @@ class BuscarProfessorController extends Controller
 
     }
 
-    public function BuscarMaiorNota(Request $request)
+    public function BuscarMaiorNota()
+    {
+        $buscarProfessor = new BuscarProfessores();
+        $professor = $buscarProfessor->BuscarMaiorNota();
+
+        return $professor->toArray();
+    }
+
+    public function BuscaUltimoComentario()
     {
         $buscarProfessor = new BuscarProfessores();
         $ultimoComent = Comentario::where('puplicavel', true)->latest('created_at')->first();
-        $professor = $buscarProfessor->BuscarMaiorNota();
         $user = $ultimoComent 
             ? $buscarProfessor->BuscarUserQueFezComentarioPorID([$ultimoComent->criadoBY])
             : null;
 
-        return Inertia::render('Dashboard', [
-            'professor' => $professor,
-            'comentario' => $ultimoComent,
-            'user' => $user[0],
-        ]);
+        $notaComentario = [
+            'user' => $user,
+            'ultimoComent' => $ultimoComent,
+        ];
+
+        return $notaComentario;
     }
 }

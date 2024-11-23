@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Helpers;
+namespace App\Services;
 
 use App\Models\Comentario;
 use App\Models\Professor;

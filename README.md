@@ -80,4 +80,3 @@ Você pode também executar o arquivo setup.sh para realizar a configuração au
 ```
 bash setup.sh
 ```
-

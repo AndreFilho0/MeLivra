@@ -28,7 +28,7 @@
         border-gray-300 
         bg-gray-100">
       <h2 class="text-center text-xl font-bold text-black dark:text-white">
-        Último comentário foi de {{ user.name }} 
+        Último comentário foi de {{ user.name }}
       </h2>
       <p class="text-center">
         "{{ comentario.comentario }}" ao prof {{ comentario.nomeProfessor }} do {{ comentario.instProfessor }}
@@ -43,6 +43,8 @@ import { ref, onMounted } from 'vue';
 const professor = ref({});
 const comentario = ref({});
 const user = ref({});
+
+console.log(comentario);
 
 onMounted(() => {
   professor.value = usePage().props.professor || {};

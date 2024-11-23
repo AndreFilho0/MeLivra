@@ -7,6 +7,7 @@ use App\Http\Controllers\ComentariosController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReclamacaoController;
 use App\Http\Controllers\SubscribeController;
+use App\Http\Services\BuscarProfessores;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -42,13 +43,20 @@ Route::get('/dashboard', function () {
 
     $idUser=Auth::user()->id;
     $userPrime = new Userprime();
-   $prime = $userPrime->userIsPrime($idUser);
+    $prime = $userPrime->userIsPrime($idUser);
     
+    $buscarProfessores = new BuscarProfessorController();
+    $maiorNota = $buscarProfessores->BuscarMaiorNota();
+    $ultimoComentario = $buscarProfessores->BuscaUltimoComentario();
+
    
     return Inertia::render('Dashboard',[
      'nomeUser'=>Auth()->user()->name,
      'emailUser'=>Auth()->user()->email,
      'userPrime'=>$prime,
+     'professor'=>$maiorNota,
+     'user'=>$ultimoComentario['user'],
+     'comentario'=>$ultimoComentario['ultimoComent'],
     ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/doacao', function () {
@@ -85,9 +93,6 @@ Route::post('/dashboard/addNota',[ComentariosController::class,'AddNota'])
 
 Route::get('/dashboard/procuraInfo',[BuscarProfessorController::class,'BucarInformacaoProfessor'])
 ->middleware(['auth','verified'])->name('dashboard.procuraInfo');
-
-Route::get('/dashboard',[BuscarProfessorController::class,'BuscarMaiorNota'])
-->middleware(['auth','verified'])->name('dashboard');
 
 Route::get('/dashboard/reclamacao',[ReclamacaoController::class,'index'])
 ->middleware(['auth','verified'])->name('dashboard.reclamacao');

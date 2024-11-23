@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Helpers\BuscarProfessores;
+use App\Services\BuscarProfessores;
 use App\Http\Helpers\Userprime;
 use App\Models\Comentario;
 use App\Models\Professor;
