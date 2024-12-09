@@ -12,9 +12,19 @@
         border-gray-300 
         bg-gray-100">
       <h2 class="text-center text-xl font-bold text-black dark:text-white">Melhores professores</h2>
-      <p v-for="(prof, index) in professor" :key="index" class="text-justify pl-3">
-        {{ index + 1 }}. {{ prof.nomeProfessor }} do {{ prof.instituto }} com {{ prof.Nota }}
+      <p v-for="(prof, index) in professor" :key="index" class="text-justify pl-3 flex gap-3">
+        <StarIcon 
+          :class="{
+            'text-yellow-300': index === 0,
+            'text-gray-300': index === 1,
+            'text-orange-500': index === 2
+          }"
+          class="flex-shrink-0 h-5 w-5" 
+          aria-hidden="false" 
+        />
+       {{ prof.nomeProfessor }} do {{ prof.instituto }} com <span class="text-green-500" >{{ prof.Nota }}</span>
       </p>
+
     </div>
 
     <div class="
@@ -38,13 +48,14 @@
 </template>
 
 <script setup>
+import { StarIcon } from '@heroicons/vue/20/solid';
 import { usePage } from '@inertiajs/vue3';
 import { ref, onMounted } from 'vue';
 const professor = ref({});
 const comentario = ref({});
 const user = ref({});
 
-console.log(comentario);
+
 
 onMounted(() => {
   professor.value = usePage().props.professor || {};

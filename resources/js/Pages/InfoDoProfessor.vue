@@ -128,8 +128,7 @@ let nomeProfessor = usePage().props.nomeProfessor;
 let instuto = usePage().props.instituto;
 let fileurls = usePage().props.file_urls;
 
-console.log(instuto)
-console.log(nomeProfessor);
+
 
 
 
