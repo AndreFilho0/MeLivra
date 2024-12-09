@@ -24,7 +24,7 @@ class BuscarProfessores{
         ->first();
 
     }
-    public function BuscarMaiorNota(){
+    public function BuscarMaioresNota(){
         return Professor::orderBy('Nota', 'desc')->take(3)->get();
 
     }

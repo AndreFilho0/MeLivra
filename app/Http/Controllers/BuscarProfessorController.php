@@ -146,7 +146,7 @@ class BuscarProfessorController extends Controller
     public function BuscarMaiorNota()
     {
         $buscarProfessor = new BuscarProfessores();
-        $professor = $buscarProfessor->BuscarMaiorNota();
+        $professor = $buscarProfessor->BuscarMaioresNota();
 
         return $professor->toArray();
     }

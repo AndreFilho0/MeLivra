@@ -22,7 +22,7 @@
           class="flex-shrink-0 h-5 w-5" 
           aria-hidden="false" 
         />
-       {{ prof.nomeProfessor }} do {{ prof.instituto }} com <span class="text-green-500" >{{ prof.Nota }}</span>
+       {{ prof.nomeProfessor }} do {{ prof.instituto }} com <span class="text-green-500" >{{ (prof.Nota / prof.QtsAvalicao).toFixed(2) }}</span>
       </p>
 
     </div>
@@ -38,7 +38,7 @@
         border-gray-300 
         bg-gray-100">
       <h2 class="text-center text-xl font-bold text-black dark:text-white">
-        Último comentário foi de {{ user.name }}
+        Último comentário: 
       </h2>
       <p class="text-center">
         "{{ comentario.comentario }}" ao prof {{ comentario.nomeProfessor }} do {{ comentario.instProfessor }}
