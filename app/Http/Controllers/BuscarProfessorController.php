@@ -143,27 +143,4 @@ class BuscarProfessorController extends Controller
 
     }
 
-    public function BuscarMaiorNota()
-    {
-        $buscarProfessor = new BuscarProfessores();
-        $professor = $buscarProfessor->BuscarMaioresNota();
-
-        return $professor->toArray();
-    }
-
-    public function BuscaUltimoComentario()
-    {
-        $buscarProfessor = new BuscarProfessores();
-        $ultimoComent = Comentario::where('puplicavel', true)->latest('created_at')->first();
-        $user = $ultimoComent 
-            ? $buscarProfessor->BuscarUserQueFezComentarioPorID([$ultimoComent->criadoBY])
-            : null;
-
-        $notaComentario = [
-            'user' => $user,
-            'ultimoComent' => $ultimoComent,
-        ];
-
-        return $notaComentario;
-    }
 }
