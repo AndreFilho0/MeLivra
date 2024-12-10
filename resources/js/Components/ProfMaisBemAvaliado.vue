@@ -40,9 +40,10 @@
       <h2 class="text-center text-xl font-bold text-black dark:text-white">
         Último comentário : 
       </h2>
-      <p class="text-center">
-        "{{ comentario.comentario }}" ao prof {{ comentario.nomeProfessor }} do {{ comentario.instProfessor }}
-      </p>
+      <p class="text-center font-mono" > Feito para {{ comentario.nomeProfessor }}</p>
+      <p class="text-center font-mono" >Instituto: {{ comentario.instProfessor }}</p>
+      <div class="mt-4 text-center space-y-6 text-base italic text-gray-600" v-html="comentario.comentario" />
+      
     </div>
   </div>
 </template>
