@@ -1,6 +1,6 @@
 <!-- Componente para as tabelas professor melhor avaliado e Último Comentario -->
 <template>
-  <div class="flex justify-between w-full mt-3 px-2">
+  <div class="flex flex-col md:flex-row justify-between w-full mt-3 px-2 gap-5">
     <div class="
         justify-center 
         w-full 
