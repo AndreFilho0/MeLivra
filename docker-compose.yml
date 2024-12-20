@@ -62,20 +62,20 @@ services:
       MYSQL_ROOT_PASSWORD: examplepassword
     networks:
       - melivra
-  minio:
-    image: minio/minio:latest
-    container_name: minio
-    ports:
-      - "9000:9000" 
-      - "9001:9001" 
-    volumes:
-      - minio-data:/data
-    networks:
-      - melivra   
-    environment:
-      MINIO_ROOT_USER: "admin"  
-      MINIO_ROOT_PASSWORD: "admin123"  
-    command: ["server", "/data", "--console-address", ":9001"]
+ # minio:
+  #  image: minio/minio:latest
+  #  container_name: minio
+  #  ports:
+  #    - "9000:9000" 
+  #    - "9001:9001" 
+  #  volumes:
+  #    - minio-data:/data
+  #  networks:
+  #    - melivra   
+  #  environment:
+  #    MINIO_ROOT_USER: "admin"  
+  #    MINIO_ROOT_PASSWORD: "admin123"  
+  #  command: ["server", "/data", "--console-address", ":9001"]
 networks:
   melivra:
 
@@ -83,6 +83,6 @@ networks:
 volumes:
   db_data:
   redis-data:
-  minio-data:
+ # minio-data:
 
 
