@@ -39,7 +39,7 @@ class StorageS3 {
                 $url = Storage::disk('s3')->temporaryUrl(
                     $file,
                     now()->addMinutes(5),
-                    ['ResponseContentDisposition' => 'attachment']
+                   
                 );
 
             
