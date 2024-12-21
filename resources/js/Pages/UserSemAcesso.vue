@@ -8,7 +8,7 @@
       </div>
       <div class="ml-3">
         <p class="text-sm text-yellow-700">
-          Você já fez 5 requisições nas últimas 24 horas,
+          Você já fez 10 requisições nas últimas 24 horas,
           <a :href="route('subscribe')" class="font-medium text-yellow-700 underline hover:text-yellow-600">assine o plano Me Livra+ ou espere {{ 24 - difHoras }} horas até liberar acesso</a>
         </p>
       </div>
