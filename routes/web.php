@@ -4,9 +4,11 @@ use App\Http\Controllers\AdmController;
 use App\Http\Controllers\BibliotecaDeAlexandriaController;
 use App\Http\Controllers\BuscarProfessorController;
 use App\Http\Controllers\ComentariosController;
+use App\Http\Controllers\DashController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReclamacaoController;
 use App\Http\Controllers\SubscribeController;
+use App\Http\Services\BuscarProfessores;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -16,7 +18,6 @@ use App\Http\Helpers\Userprime;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -38,19 +39,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-
-    $idUser=Auth::user()->id;
-    $userPrime = new Userprime();
-   $prime = $userPrime->userIsPrime($idUser);
-    
-   
-    return Inertia::render('Dashboard',[
-     'nomeUser'=>Auth()->user()->name,
-     'emailUser'=>Auth()->user()->email,
-     'userPrime'=>$prime,
-    ]);
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[DashController::class,'dash'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/doacao', function () {
 
     $idUser=Auth::user()->id;

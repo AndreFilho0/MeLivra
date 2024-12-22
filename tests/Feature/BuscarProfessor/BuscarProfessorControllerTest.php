@@ -2,8 +2,9 @@
 
 namespace Tests\Feature\BuscarProfessor;
 
+use App\Http\Controllers\BuscarProfessorController;
 use App\Http\Controllers\SubscribeController;
-use App\Http\Helpers\BuscarProfessores;
+use App\Services\BuscarProfessores;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -51,7 +52,7 @@ class BuscarProfessorControllerTest extends TestCase
         $user = User::factory()->create();
          $this->actingAs($user);
 
-         $user->QtsReq = "6";
+         $user->QtsReq = "11";
          $user->save();
 
          $response = $this->get('/dashboard/procuraInfo?nomeProfessor=teste&instituto=IME');
@@ -66,11 +67,5 @@ class BuscarProfessorControllerTest extends TestCase
 
 
     }
-   
-
-
-
-    
-    
 
 }
