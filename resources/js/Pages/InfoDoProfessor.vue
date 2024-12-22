@@ -43,7 +43,7 @@
 
         <div class="mt-10">
           <h3 class="text-lg  font-mono font-bold">Deixe alguma nota para esse Professor(a) </h3>
-          <a :href="route('dashboard.darnota')" class="mt-6 font-mono inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full">Adicioanr uma nota</a>
+          <a :href="route('dashboard.darnota')" class="mt-6 font-mono inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full">Adicionar uma nota</a>
         </div>
       </div>
       
@@ -70,7 +70,7 @@
 
         <div class="mt-10">
           <h3 class="text-lg  font-mono font-bold">Deixe algum comentário para esse professor(a)</h3>
-          <a :href="route('dashboard.deixarComentario')" class="mt-6 font-mono  inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full">Adicioanar um comentário</a>
+          <a :href="route('dashboard.deixarComentario')" class="mt-6 font-mono  inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full">Adicionar um comentário</a>
         </div>
         
       </div>
@@ -128,8 +128,7 @@ let nomeProfessor = usePage().props.nomeProfessor;
 let instuto = usePage().props.instituto;
 let fileurls = usePage().props.file_urls;
 
-console.log(instuto)
-console.log(nomeProfessor);
+
 
 
 

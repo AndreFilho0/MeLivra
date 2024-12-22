@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Helpers\BuscarProfessores;
+use App\Services\BuscarProfessores;
 use App\Http\Helpers\StorageS3;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -11,6 +11,7 @@ use App\Http\Helpers\Userprime;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Comentario;
 
 use function Termwind\render;
 
@@ -139,4 +140,5 @@ class BuscarProfessorController extends Controller
 
 
     }
+
 }

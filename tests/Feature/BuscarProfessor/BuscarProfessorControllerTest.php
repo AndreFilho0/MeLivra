@@ -2,8 +2,9 @@
 
 namespace Tests\Feature\BuscarProfessor;
 
+use App\Http\Controllers\BuscarProfessorController;
 use App\Http\Controllers\SubscribeController;
-use App\Http\Helpers\BuscarProfessores;
+use App\Services\BuscarProfessores;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -66,11 +67,26 @@ class BuscarProfessorControllerTest extends TestCase
 
 
     }
-   
 
+    public function test_ifBuscaUltimoComentarioReturnsLastComentAndItsAuthor()
+    {
+        $bProf = new BuscarProfessorController();
+        $user = User::factory()->create();
+        $this->actingAs($user);
 
+        $result = $bProf->BuscaUltimoComentario();
 
-    
-    
+        $this->assertIsArray( $result);
+    }
 
+    public function test_ifBuscarMaiorNotaReturnsAnArray()
+    {
+        $bProf = new BuscarProfessorController();
+        $user = User::factory()->create();
+        $this->actingAs($user);
+
+        $result = $bProf->BuscarMaiorNota();
+
+        $this->assertIsArray($result);
+    }
 }
