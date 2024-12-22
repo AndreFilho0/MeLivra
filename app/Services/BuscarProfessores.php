@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Comentario;
 use App\Models\Professor;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class BuscarProfessores{
 
@@ -25,7 +26,12 @@ class BuscarProfessores{
 
     }
     public function BuscarMaioresNota(){
-        return Professor::orderBy('Nota', 'desc')->take(3)->get();
+
+        return DB::select("SELECT nomeProfessor, instituto,  Nota, QtsAvalicao, (Nota / QtsAvalicao) AS mediaAvaliacao
+            from professors
+            WHERE QtsAvalicao > 0
+            ORDER BY mediaAvaliacao DESC
+            LIMIT 3");
 
     }
     public function BuscarUserQueFezComentarioPorID(array $ids){

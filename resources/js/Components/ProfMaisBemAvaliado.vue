@@ -10,9 +10,9 @@
         p-2
         shadow-xl
         border-gray-300 
-        bg-gray-100">
-      <h2 class="text-center text-xl font-bold text-black dark:text-white">Melhores professores :</h2>
-      <p v-for="(prof, index) in professor" :key="index" class="text-center pl-3 flex justify-center gap-1">
+        bg-gray-50">
+      <h2 class="text-center text-xl font-bold text-black dark:text-white">G.O.A.T.s :</h2>
+      <p v-for="(prof, index) in professor" :key="index" class="text-center  flex justify-center gap-1">
         <StarIcon 
           :class="{
             'text-yellow-300': index === 0,
@@ -28,6 +28,7 @@
     </div>
 
     <div class="
+        flex-col
         justify-center 
         w-full 
         mx-2 
@@ -36,13 +37,14 @@
         p-2
         shadow-xl
         border-gray-300 
-        bg-gray-100">
+        bg-gray-50 
+        ">
       <h2 class="text-center text-xl font-bold text-black dark:text-white">
         Último comentário : 
       </h2>
       <p class="text-center font-mono" > Feito para {{ comentario.nomeProfessor }}</p>
-      <p class="text-center font-mono" >Instituto: {{ comentario.instProfessor }}</p>
-      <div class="mt-4 text-center space-y-6 text-base italic text-gray-600" v-html="comentario.comentario" />
+      <p class="text-center font-mono" > {{ comentario.instProfessor }}</p>
+      <div class="mt-4 max-w-96 overflow-x-auto text-center space-y-6 text-base italic text-gray-600" v-html="comentario.comentario" />
       
     </div>
   </div>

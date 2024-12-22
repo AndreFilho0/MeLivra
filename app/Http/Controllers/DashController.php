@@ -20,7 +20,6 @@ class DashController extends Controller {
 
     $prime = $userPrime->userIsPrime($idUser);
     $professor = $buscarProfessor->BuscarMaioresNota();
-    $maiorNota =  $professor->toArray();
     $ultimoComent = Comentario::where('puplicavel', true)->latest('created_at')->first();
     $user = $ultimoComent 
         ? $buscarProfessor->BuscarUserQueFezComentarioPorID([$ultimoComent->criadoBY])
@@ -39,7 +38,7 @@ class DashController extends Controller {
      'nomeUser'=>Auth()->user()->name,
      'emailUser'=>Auth()->user()->email,
      'userPrime'=>$prime,
-     'professor'=>$maiorNota,
+     'professor'=>$professor,
      'user'=>$ultimoComentario['user'],
      'comentario'=>$ultimoComentario['ultimoComent'],
     ]);
