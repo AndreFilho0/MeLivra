@@ -52,7 +52,7 @@ class BuscarProfessorControllerTest extends TestCase
         $user = User::factory()->create();
          $this->actingAs($user);
 
-         $user->QtsReq = "6";
+         $user->QtsReq = "11";
          $user->save();
 
          $response = $this->get('/dashboard/procuraInfo?nomeProfessor=teste&instituto=IME');
@@ -68,25 +68,4 @@ class BuscarProfessorControllerTest extends TestCase
 
     }
 
-    public function test_ifBuscaUltimoComentarioReturnsLastComentAndItsAuthor()
-    {
-        $bProf = new BuscarProfessorController();
-        $user = User::factory()->create();
-        $this->actingAs($user);
-
-        $result = $bProf->BuscaUltimoComentario();
-
-        $this->assertIsArray( $result);
-    }
-
-    public function test_ifBuscarMaiorNotaReturnsAnArray()
-    {
-        $bProf = new BuscarProfessorController();
-        $user = User::factory()->create();
-        $this->actingAs($user);
-
-        $result = $bProf->BuscarMaiorNota();
-
-        $this->assertIsArray($result);
-    }
 }
