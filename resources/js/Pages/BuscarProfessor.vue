@@ -15,14 +15,14 @@
                 <select v-model="instituto" id="instituto" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 ">
                     
                   <option v-for="inst in Inst" :value="inst">{{ inst }} <MagnifyingGlassIcon class="h-5 w-5 text-gray-400" aria-hidden="true" /></option>
-                    <!-- Certifique-se de que 'Inst' seja um array contendo os institutos -->
+                    
                 </select>  
             </div>
             <div>
                 <label for="professor" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome do Professor</label>
                 <select v-model="nomeProfessor" id="professor" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     <option v-for="prof in ProfExp" :value="prof.nomeProfessor">{{ prof.nomeProfessor }}</option>
-                    <!-- Substitua 'prof.id' pelo valor real que representa o identificador único do professor -->
+                    
                 </select>
             </div>  
           </div>
@@ -59,14 +59,14 @@ import { initFlowbite } from 'flowbite'
 import AdminL from './Profile/Componentes/AdminL.vue'
 import { usePage,router,Link } from '@inertiajs/vue3';
 
-// professores que estão no banco de dados
+
 const Prof = usePage().props.profs;
 let ComentariosProfs = usePage().props.comentario;
 let NotaProfs = usePage().props.nota; 
 let loud = ref(false);
 
 
-//mensagem de add comentario sucesso
+
 
 
 //instututos da ufg
@@ -104,13 +104,13 @@ const Inst =[
 
 let not = ref(false)
 
-//form para comentario
+
 const nomeProfessor = ref('')
 const instituto = ref('')
 const ProfExp = ref([]);
-//end
 
-//metodo para adicionar comentario
+
+
 const BuscarProfessor = async()=>{
 
     loud.value = true;
